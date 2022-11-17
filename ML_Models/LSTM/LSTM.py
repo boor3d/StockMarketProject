@@ -18,7 +18,7 @@ for t in ticker_symbols:
 
     ticker_data.drop(columns="Close")
 
-    
+
     training_data = ticker_data.iloc[:int(round(len(ticker_data) * .8 ,0))]
     training_set = ticker_data.iloc[:, 5:6].values
 
