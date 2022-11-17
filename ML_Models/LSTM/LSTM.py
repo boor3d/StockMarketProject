@@ -60,9 +60,9 @@ for t in ticker_symbols:
 
     model.add(Dense(units=1))
 
-    model.compile(optimizer='sgd',loss='mean_squared_error')
+    model.compile(optimizer='adam',loss='mean_squared_error')
 
-    model.fit(X_train,y_train,epochs=10,batch_size=32)
+    model.fit(X_train,y_train,epochs=2,batch_size=32)
 
     test_data = ticker_data.iloc[-(int(round(len(ticker_data) * .2 ,0))):]
     test_set = test_data.iloc[:, 5:6].values
